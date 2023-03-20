@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Cowboys;
+    src: url(Carnevalee-Freakshow.ttf);
+}
+
+* {
+    margin: 0;
+    border: 0;
+    background-color: #DDA15E;
+    color: black;
+    font-family:'Courier New', Courier, monospace;
+    
+}
+
+.story {
+    width: 50%;
+    height: 100vh;
+    background: #BC6C25;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+h1 {
+    font-family:Cowboys;
+    font-size: 125px;
+    color: #283618;
+    text-align: center;
+}
+
