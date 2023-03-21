@@ -6,20 +6,32 @@
 * {
     margin: 0;
     border: 0;
-    background-color: #DDA15E;
     color: black;
     font-family:'Courier New', Courier, monospace;
     
 }
 
+p {
+    margin:20px;
+}
+
 .story {
-    width: 50%;
-    height: 100vh;
+    width: 70%;
+    height: 60vh;
+    margin-right: 15%;
+    margin-left: 15%;
     background: #BC6C25;
+    font-size: 14pt;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    display:inline-flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-around;
+}
+
+body {
+    padding:2rem;
+    background-color: #DDA15E;
 }
 
 
@@ -30,3 +42,11 @@ h1 {
     text-align: center;
 }
 
+.interactives {
+    background-color: #606C38;
+    width: 70%;
+    height: 10vh;
+    margin-right: 15%;
+    margin-left: 15%;
+    align-self: center;
+}
