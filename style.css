@@ -42,6 +42,12 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-family:Cowboys;
+    font-size: 45px;
+    color: black;
+}
+
 .interactives {
     background-color: #606C38;
     width: 70%;
