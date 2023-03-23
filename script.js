@@ -9,6 +9,8 @@ let btnElement = document.getElementById("btn");
 const drpDownElement = document.querySelector('.dropDown')
 const gamePlayText = document.querySelector('.play-content')
 const locName = document.querySelector('#welcome')
+const endPic = document.querySelector('#pic')
+const interactives = document.querySelector('.interactives')
 let btn1,
 btn2,
 btn3,
@@ -60,7 +62,7 @@ const stations = {
     },
     station6: {
         name: `Journey Completed!`,
-        textContent: `You did it, ${userName.value}!  You have completed the Oregon Trail in one piece!  Not many ${userPosse.value}s make it this far, but here you stand!`,
+        textContent: `You did it, ${userName.value}!  You have completed the Oregon Trail in one piece!  Not many travelers make it this far, but here you stand with points in hand!  View your score below and give yourself a good ol' pat on the back!`,
         userTextInput: `<input type="text" id="station5Act">`,
         userBtnInput: `<input type="button" id="station5Btn">`,
         img: `<img src="https://i.imgur.com/X6eW9q2.png" alt="stooges">`,
@@ -68,11 +70,7 @@ const stations = {
 }
 
 
-class Character {
-    constructor(name) {
-    this.name = name;
-    }
-}
+
 
 class Posse {
     constructor (name, type, health, spirit, money) {
@@ -82,45 +80,46 @@ class Posse {
         this.spirit = spirit;
         this.money = money;
     }
-}
-//creating posses
-const moonshiner = new Posse('Moonshiner', 'Moonshiner', '200', '150', '100')
-const hunter = new Posse('Hunter', 'Hunter', '100', '100', '200')
-const outlaw = new Posse('Outlaw', 'Outlaw', '100', '300', '200')
-
-//activity effect values
-const huntHealthBoost = 50
-const huntSpiritBoost = 20
-const huntMoneyBoost = 10
 
 //activity effects
-const actHunt = function () {
-    this.health += huntHealthBoost;
-    this.spirit += huntSpiritBoost;
-    this.money -= huntMoneyBoost;
+actHunt = function () {
+    this.health += 50;
+    this.spirit += 20;
+    this.money -= 10;
 }
 
-const actParty = function () {
+actParty = function () {
     this.health += 10;
     this.spirit += 50;
     this.money -= 10;
 }
 
-const actSteal = function () {
+actSteal = function () {
     this.health -= 20;
     this.spirit -= 10;
     this.money += 50;
 }
 
-const actTrade = function () {
+actTrade = function () {
     this.health += 10;
     this.spirit += 20;
     this.money += 30;
 }
-
-const pitStop1 = function () {
-
 }
+//creating posses
+const moonshiner = new Posse('Moonshiner', 'Moonshiner', 200, 150, 100)
+const hunter = new Posse('Hunter', 'Hunter', 100, 100, 200)
+const outlaw = new Posse('Outlaw', 'Outlaw', 100, 300, 200)
+
+class Sidekick extends Posse{
+    constructor(name,type,health,spirit,money) {
+    this.name = name;
+        this.type = type;
+        this.health = health;
+        this.spirit = spirit;
+        this.money = money;
+}}
+
 
 //CLICKING AND EVENTLISTENERS
 
@@ -129,17 +128,42 @@ btnElement.addEventListener("click", () => {
     // if (drpDownElement.value !== "Choose Your role")
     myTitle.textContent = `${userName.value}'s ${userPosse.value} Gang`;
     userName.remove();
+    if (userPosse.value === "Hunter") {
+        var theUser = hunter;
+        console.log(theUser);
+    }
+    if (userPosse.value === "Outlaw") {
+        var theUser = outlaw;
+        console.log(theUser);
+    }
+    if (userPosse.value === "Moonshiner") {
+        var theUser = moonshiner;
+        console.log(theUser);
+    }
+    
     userPosse.innerHTML = stations.station1.userTextInput;
     infoElement.remove();
     gamePlayText.innerHTML = (stations.station1.textContent)
     locName.textContent = (stations.station1.name);
     btn1 = document.createElement('button')
-        btn1.textContent = "Continue"
+    btn1.textContent = "Continue"
     btnElement.replaceWith(btn1)
         
         btn1.addEventListener("click", () => {
             gamePlayText.innerHTML = (stations.station2.textContent)
             locName.textContent = (stations.station2.name);
+            if (userPosse.value == "1") {
+                theUser.actHunt();
+            }
+            if (userPosse.value == "4") {
+                theUser.actParty();
+            }
+            if (userPosse.value == "2") {
+                theUser.actSteal();
+            }
+            if (userPosse.value == "3") {
+                theUser.actTrade();
+            } console.log(theUser);
             btn2 = document.createElement('button')
             btn2.textContent = "Continue"
         btn1.replaceWith(btn2);
@@ -170,6 +194,9 @@ btnElement.addEventListener("click", () => {
                             locName.textContent = (stations.station6.name);
                             btn5.remove();
                             userPosse.remove()
+                            endPic.style.display = "flex"
+                            let sum = theUser.health + theUser.spirit + theUser.money;
+                            interactives.innerHTML = `<h3>Your score: ${sum}</h3>`
 
                         //     btn6 = document.createElement('button')
                         //     btn6.textContent = "Restart"
