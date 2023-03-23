@@ -9,13 +9,15 @@
 </head>
 <body>
     <div class="main-content">
-    <h1 id="main-title">The Oregon Trail</h1>
+    <h1 id="title">The Oregon Trail</h1>
 
-        <div class="story">
-            <img src="https://i.imgur.com/X6eW9q2.png" alt="stooges">
-            
+<div class="story">
+            <!-- <img src="https://i.imgur.com/X6eW9q2.png" alt="stooges"> -->
+    <div id="gameplay-text"> 
+            <h3 class="main-title" id="welcome">Welcome!</h3>
+            <div class="play-content">
         <p id="p1">
-            Welcome!  Immerse yourself in the interactive story to follow.  Take a moment to read the introduction, set up your posse, and take to the road less traveled!
+            Immerse yourself in the interactive story to follow.  Take a moment to read the introduction, set up your posse, and take to the road less traveled!
         </p>
             
         <p id="p2">
@@ -27,26 +29,29 @@
         <p id="p3">
             What type of life will you lead?  What’s most important to you on your journey?  Will you focus on strengthening yourself, or have a little bit of fun along the way?  Fancy yourself a trader, or are you a wildling looking to steal your way to the end?  Each activity chosen at each pitstop will be reflected in its effect on your posse’s points.  Your success will be measured by how much health, spirit and money you have at your final destination.
         </p>
-
+    </div>
+    </div>
         </div>
 
-    </div>
+</div>
     <div class="interactives">
         <input type="text" name="input-name" id="input-name" value="Wallace">
         <!-- <input type="submit" value="yikes"> -->
+    <div class="dropDown">
         <select name="role" id="role">
             <option selected disabled hidden>Select Your Posse</option>
             <option value="Moonshiner">Moonshiner</option>
             <option value="Hunter">Hunter</option>
             <option value="Outlaw">Outlaw</option>
         </select>
+    </div>
 
         <input type="button" value="Submit" id="btn">
-        <input type="button" value="Show More Info" id="more-info">
+        <!-- <input type="button" value="Show More Info" id="more-info"> -->
 
         
     </div>
-    <div class="story">
+    <div class="story" id="more-info">
         <h3 class="main-title">Moonshiner</h3>
         <p>A life of shine!  You’ve lived a full life of hard work already, yet eager for a journey.  Bootleggin’ ain’t what it used to be, at least not around these parts.  So you welcome the idea of finding settlement elsewhere.  Your hard life has made you and yours better suited than most for the travel, and there ain’t a group from here to Hutzaplutz that can top your hoedown!  The road awaits you like a freshly cracked bottle o’ nectar!</p>
         <h3 class="main-title">Hunter</h3>

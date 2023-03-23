@@ -15,6 +15,10 @@ p {
     margin:20px;
 }
 
+/* .main-title {
+    align-self: center;
+} */
+
 .story {
     width: 70%;
     /* height: 60vh; */
@@ -46,6 +50,7 @@ h3 {
     font-family:Cowboys;
     font-size: 45px;
     color: black;
+    text-align: center;
 }
 
 .interactives {
@@ -55,4 +60,8 @@ h3 {
     margin-right: 15%;
     margin-left: 15%;
     align-self: center;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-around;
 }
