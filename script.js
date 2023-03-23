@@ -111,15 +111,43 @@ const moonshiner = new Posse('Moonshiner', 'Moonshiner', 200, 150, 100)
 const hunter = new Posse('Hunter', 'Hunter', 100, 100, 200)
 const outlaw = new Posse('Outlaw', 'Outlaw', 100, 300, 200)
 
-class Sidekick extends Posse{
+class Sidekick {
     constructor(name,type,health,spirit,money) {
-    this.name = name;
+        this.name = name;
         this.type = type;
         this.health = health;
         this.spirit = spirit;
-        this.money = money;
-}}
+        this.money = money;}
 
+    govern = function () {
+    this.health *= 0;
+    this.spirit *= 0;
+    this.money *= 0;
+    }
+
+    payote = function () {
+        this.health += 100;
+    this.spirit *= 5;
+    this.money += 0;
+    }
+
+    extraHunt = function () {
+        this.health += 50;
+    this.spirit += 50;
+    this.money += 0;
+    }
+
+    getGem = function () {
+        this.health += 0;
+    this.spirit += 0;
+    this.money *= 1000;
+    }
+}
+
+const wolfie = new Sidekick('Ghost', 'Wolf', 250, 100, 0);
+const native = new Sidekick('Running-Coyote', 'Apache', 100, 100, 0)
+const law = new Sidekick('Sheriff Belfort', 'Lawman', 1, 0, 0)
+const gem = new Sidekick('Sapphire', 'Gem', 0, 0, 1)
 
 //CLICKING AND EVENTLISTENERS
 
@@ -153,7 +181,7 @@ btnElement.addEventListener("click", () => {
             gamePlayText.innerHTML = (stations.station2.textContent)
             locName.textContent = (stations.station2.name);
             if (userPosse.value == "1") {
-                theUser.actHunt();
+                theUser.actHunt();                
             }
             if (userPosse.value == "4") {
                 theUser.actParty();
@@ -171,6 +199,19 @@ btnElement.addEventListener("click", () => {
             btn2.addEventListener("click", () => {
                 gamePlayText.innerHTML = (stations.station3.textContent)
                 locName.textContent = (stations.station3.name);
+                if (userPosse.value == "1") {
+                    theUser.actHunt();
+                    wolfie.actHunt();
+                }
+                if (userPosse.value == "4") {
+                    theUser.actParty();
+                }
+                if (userPosse.value == "2") {
+                    theUser.actSteal();
+                }
+                if (userPosse.value == "3") {
+                    theUser.actTrade();
+                }
                 btn3 = document.createElement('button')
                 btn3.textContent = "Continue"
             btn2.replaceWith(btn3);
@@ -178,6 +219,20 @@ btnElement.addEventListener("click", () => {
                 btn3.addEventListener("click", () => {
                     gamePlayText.innerHTML = (stations.station4.textContent)
                     locName.textContent = (stations.station4.name);
+                    if (userPosse.value == "1") {
+                        theUser.actHunt();
+                        wolfie.extraHunt();
+                    }
+                    if (userPosse.value == "4") {
+                        theUser.actParty();
+                        native.payote();
+                    }
+                    if (userPosse.value == "2") {
+                        theUser.actSteal();
+                    }
+                    if (userPosse.value == "3") {
+                        theUser.actTrade();
+                    }
                     btn4 = document.createElement('button')
                     btn4.textContent = "Continue"
                 btn3.replaceWith(btn4);
@@ -185,17 +240,52 @@ btnElement.addEventListener("click", () => {
                     btn4.addEventListener("click", () => {
                         gamePlayText.innerHTML = (stations.station5.textContent)
                         locName.textContent = (stations.station5.name);
+                        if (userPosse.value == "1") {
+                            theUser.actHunt();
+                            wolfie.extraHunt();
+                        }
+                        if (userPosse.value == "4") {
+                            theUser.actParty();
+                        }
+                        if (userPosse.value == "2") {
+                            theUser.actSteal();
+                            law.govern();
+                        }
+                        if (userPosse.value == "3") {
+                            theUser.actTrade();
+                        }
                         btn5 = document.createElement('button')
                         btn5.textContent = "Continue"
                     btn4.replaceWith(btn5);
 
                         btn5.addEventListener("click", () => {
+                            if (userPosse.value == "1") {
+                                theUser.actHunt();
+                                wolfie.extraHunt();
+                            }
+                            if (userPosse.value == "4") {
+                                theUser.actParty();
+                            }
+                            if (userPosse.value == "2") {
+                                theUser.actSteal();
+                                law.govern();
+                            }
+                            if (userPosse.value == "3") {
+                                theUser.actTrade();
+                                gem.getGem();
+                            }
                             gamePlayText.innerHTML = (stations.station6.textContent)
                             locName.textContent = (stations.station6.name);
                             btn5.remove();
                             userPosse.remove()
                             endPic.style.display = "flex"
-                            let sum = theUser.health + theUser.spirit + theUser.money;
+                            let sum = (theUser.health + theUser.spirit + theUser.money + 
+                            wolfie.health + wolfie.spirit + 
+                            native.health + native.spirit + 
+                            gem.money) * law.health
+
+
+                            ;
                             interactives.innerHTML = `<h3>Your score: ${sum}</h3>`
 
                         //     btn6 = document.createElement('button')
