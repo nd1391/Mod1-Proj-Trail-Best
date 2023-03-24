@@ -1,5 +1,5 @@
 1. PROJECT TITLE & SUMMARY
-The project is titled The Oregon Trail, as the game within is a reduced form of the old Oregon Trail, released in 1971s.  I tried to emulate its emphasis on exploration and the unknown, while keeping its simplistic view on how difficult travel could be for various reasons.
+The project is titled The Oregon Trail, as the game within is a reduced form of the old Oregon Trail, released in 1971.  I tried to emulate its emphasis on exploration and the unknown, while keeping its simplistic view on how difficult travel could be for various reasons.
 
 My Oregon Trail has a similar setting to the original - a tale of western exploration in an age where nothing was certain.  Folks packed up and left towns for the hope of a new life, with or without any skills or belongings that might help them along the way.  But my game tends to highlight what I consider to be the most important skill while traveling in foreign areas - situational awareness.  Unlike its former, my Oregon Trail is riddled with hints of what is most pertinent to perform at given locations.  To quote the great George R. R. Martin, "the devil is always in the details."
 
@@ -15,7 +15,7 @@ If the player makes it to Oregon, the stats are prioritized and tallied to provi
 3. MOTIVATION
 It's easily forgotten that not too long ago, video games were just this.  Number input represented the only interaction you could have with the game.  And I recall sitting in computer class LOVING this game.  Jimmy got cholera?!  Gary is dysentary?!  No clue what any of that is but let me etch a funny quote on his gravestone.  It was a simple form of interactive storytelling that I feel still has value today, and so I wanted to highlight a game such as that with my beginner's knowledge of web development.
 
-Not to mention that, historically speaking, these adventures were insane.  While revisiting history, it always blows my mind that people found comfort in sailing or wagoning for months or years at a time.  Just volunteering to put their life into a void of unkown on a whimsicle hope that their life would improve at the end.  It's something we can't dare to comprehend today, and should be inspiring to think that our anscestors did this regularly.  The unknown is scary, but sometimes worth taking.  Oh there's gold 2,200 miles away?  Fetch me my best horse, I'll see you in 30 years, baby.
+Not to mention that, historically speaking, these adventures were insane.  While revisiting history, it always blows my mind that people found comfort in sailing or wagoning for months or years at a time.  Just volunteering to put their life into a void of unknown on a whimsicle hope that their life would improve at the end.  It's something we can't dare to comprehend today, and should be inspiring to think that our anscestors did this regularly.  The unknown is scary, but sometimes worth taking.  Oh there's gold 2,200 miles away?  Fetch me my best horse, I'll see you in 30 years, baby.
 
 
 4. CODING STYLE/LANGUAGES USED
