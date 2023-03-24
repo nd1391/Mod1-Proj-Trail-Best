@@ -140,14 +140,14 @@ class Sidekick {
     getGem = function () {
         this.health += 0;
     this.spirit += 0;
-    this.money *= 1000;
+    this.money += 1000;
     }
 }
 
 const wolfie = new Sidekick('Ghost', 'Wolf', 250, 100, 0);
 const native = new Sidekick('Running-Coyote', 'Apache', 100, 100, 0)
 const law = new Sidekick('Sheriff Belfort', 'Lawman', 1, 0, 0)
-const gem = new Sidekick('Sapphire', 'Gem', 0, 0, 1)
+const gem = new Sidekick('Sapphire', 'Gem', 0, 0, 0)
 
 //CLICKING AND EVENTLISTENERS
 
